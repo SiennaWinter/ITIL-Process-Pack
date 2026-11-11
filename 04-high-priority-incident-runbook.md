@@ -1,17 +1,13 @@
-# Major incident runbook (P1 and P2)
-
-**Organisation:** Harbourline Services *(fictional)*
-**Owner:** Major Incident Manager (MIM)
-
-A major incident is any P1 or P2 incident, or any incident the MIM declares major because of its business or reputational impact.
-
+# High priority incident runbook (P1 and P2)
+**Organisation:** North Technology Services *(fictional)*
+**Owner:** High Priority Incident Manager
+A high priority incident is any P1 or P2 incident, or any incident the incident manager declares high priority because of its business or reputational impact.
 ## Process overview
-
 ```mermaid
 flowchart TD
     A[Incident logged or alert received] --> B{P1 or P2?}
     B -->|No| Z[Standard incident process]
-    B -->|Yes| C[MIM takes ownership]
+    B -->|Yes| C[Incident manager takes ownership]
     C --> D[Confirm impact using CMDB and monitoring]
     D --> E[Open bridge call and engage resolver teams]
     E --> F[Send initial communication]
@@ -28,79 +24,53 @@ flowchart TD
     N --> O[Raise problem record]
     O --> P[Post-incident review within 5 business days]
 ```
-
 ## Step by step
-
 ### 1. Take ownership (first 15 minutes)
-
-- [ ] Accept the ticket and set yourself as MIM.
+- [ ] Accept the ticket and set yourself as Incident manager.
 - [ ] Confirm the priority using the [priority matrix](03-incident-priority-and-risk-matrix.md).
 - [ ] Check the CMDB for affected configuration items, dependent services and the resolver group.
 - [ ] Check for recent changes on affected items in the change schedule.
 - [ ] Check for related open incidents and known errors.
-
 ### 2. Mobilise
-
 - [ ] Open the bridge call and post the link in the ticket.
 - [ ] Call out the resolver teams and vendors identified from the CMDB.
 - [ ] Notify the service owner and duty manager.
-- [ ] Assign a scribe to keep the timeline in the ticket.
-
 ### 3. Communicate
-
 - [ ] Send the initial notification within 30 minutes of declaring the major incident.
-- [ ] Update stakeholders on schedule: every 30 minutes for P1, every 2 hours for P2.
-- [ ] Post a service status banner and notify the service desk so they can tag new calls to this incident.
-
+- [ ] Update stakeholders on schedule: every hour for P1, every 2 hours for P2.
+- [ ] Notify the service desk so they can tag new calls to this incident.
 ### 4. Diagnose, contain and restore
-
 - [ ] Agree a working theory and next action at each bridge checkpoint.
 - [ ] Assess risk at every checkpoint: is the impact spreading, is data at risk, is it security related?
 - [ ] Decide on drastic actions, such as shutting down a system, with the service owner. Record the decision and reason.
 - [ ] If the fix needs a change, raise an emergency change through ECAB.
-- [ ] Escalate if there is no progress at 50% of the resolution target.
-
 ### 5. Resolve and close
-
 - [ ] Confirm restoration with monitoring and at least two affected users.
 - [ ] Send the resolution notification.
 - [ ] Raise a problem record for root cause analysis.
 - [ ] Schedule the post-incident review.
-
 ## Communication templates
-
 **Initial notification**
-
-> **Subject:** [P1] Major incident: <service> unavailable
+> **Subject:** [P1] Incident XX/XX/20XX: <service> unavailable
 >
-> We are aware that <service> is unavailable for <who is affected> since <time>. Technical teams are working to restore it. Workaround: <workaround or "none available">. Next update: <time>.
-
+> The Incident management team have found that <service> is unavailable for <who is affected> since <time>. Technical teams are working to restore it. Workaround: <workaround or "none available">. Next update: <time>.
 **Update**
-
-> **Subject:** [P1] Update <n>: <service>
+> **Subject:** [P1] Update <n> XX/XX/20XX: <service>
 >
 > Current status: <what we know>. Actions under way: <what teams are doing>. Expected restoration: <time or "not yet known">. Next update: <time>.
-
 **Resolution**
-
 > **Subject:** [Resolved] <service> restored
 >
 > <Service> was restored at <time>. Cause: <brief cause, or "under investigation">. If you are still having problems, contact the service desk on <number> and quote <incident ID>.
-
 ## Post-incident review agenda
-
 1. Timeline of events
 2. What worked well
 3. What could have gone better (detection, response, communication)
 4. Root cause, or problem record reference if still under investigation
 5. Actions, with owners and due dates
-
 ## Roles on the bridge
-
 | Role | Responsibility |
 | --- | --- |
-| Major Incident Manager | Owns the incident, runs the bridge, makes or escalates decisions |
+| High priority Incident Manager | Owns the incident, runs the bridge, makes or escalates decisions |
 | Resolver teams and vendors | Diagnose and fix |
-| Scribe | Keeps the timeline and actions in the ticket |
-| Communications lead | Sends notifications (MIM for smaller incidents) |
 | Service owner | Accepts business risk and approves drastic actions |
