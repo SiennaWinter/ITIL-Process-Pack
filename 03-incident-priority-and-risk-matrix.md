@@ -24,7 +24,7 @@ Use the CMDB to see which services depend on the failed component before rating 
 | **Low** | P3 Medium | P4 Low | P4 Low |
 
 ## 4. Targets
-| Priority | Response | Resolution target | Updates to stakeholders | Major incident process |
+| Priority | Response | Resolution target | Updates to stakeholders | High priority incident process |
 | --- | --- | --- | --- | --- |
 | P1 Critical | 30 minutes | 6 hours | Every hour | Yes |
 | P2 High | 1 hour | 12 hours | Every 2 hours | Yes |
